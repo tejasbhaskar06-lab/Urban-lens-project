@@ -3,7 +3,7 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "Urban Lens made our wedding so easy. We booked an incredible freelance photographer through their marketplace, and the photos were stunning.",
+    quote: "Urban Lens made our wedding event a memorable one.. We booked an incredible freelance photographer through their marketplace, and the photos were stunning.",
     author: "Sarah & James",
     role: "Wedding Clients"
   },

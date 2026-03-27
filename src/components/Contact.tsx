@@ -61,13 +61,32 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-[var(--color-bg)] p-8 md:p-12 border border-[var(--color-surface-hover)]"
         >
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <form 
+            className="space-y-6" 
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get('name');
+              const email = formData.get('email');
+              const service = formData.get('service');
+              const date = formData.get('date');
+              const message = formData.get('message');
+
+              const subject = `New Inquiry from ${name || 'Website Visitor'}`;
+              const body = `Name: ${name}\nEmail: ${email}\nService: ${service}\nDate: ${date}\n\nMessage:\n${message}`;
+
+              const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=urbanlens2k25@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              window.open(gmailUrl, '_blank');
+            }}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  required
                   className="w-full bg-transparent border-b border-[var(--color-surface-hover)] py-3 text-[var(--color-text)] focus:outline-none focus:border-[var(--color-accent)] transition-colors"
                   placeholder="Jane Doe"
                 />
@@ -77,6 +96,8 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  required
                   className="w-full bg-transparent border-b border-[var(--color-surface-hover)] py-3 text-[var(--color-text)] focus:outline-none focus:border-[var(--color-accent)] transition-colors"
                   placeholder="jane@example.com"
                 />
@@ -87,12 +108,15 @@ export default function Contact() {
               <label htmlFor="service" className="block text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-2">Service of Interest</label>
               <select
                 id="service"
+                name="service"
                 defaultValue=""
+                required
                 className="w-full bg-transparent border-b border-[var(--color-surface-hover)] py-3 text-[var(--color-text)] focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none"
               >
                 <option value="" disabled className="bg-[var(--color-bg)]">Select a service</option>
                 <option value="rental" className="bg-[var(--color-bg)]">Camera & Gear Rental</option>
                 <option value="event" className="bg-[var(--color-bg)]">Event Coverage (Wedding/Party)</option>
+                <option value="studio" className="bg-[var(--color-bg)]">Event Photo Studios</option>
               </select>
             </div>
 
@@ -101,6 +125,7 @@ export default function Contact() {
               <input
                 type="date"
                 id="date"
+                name="date"
                 className="w-full bg-transparent border-b border-[var(--color-surface-hover)] py-3 text-[var(--color-text)] focus:outline-none focus:border-[var(--color-accent)] transition-colors"
               />
             </div>
@@ -109,6 +134,8 @@ export default function Contact() {
               <label htmlFor="message" className="block text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-2">Message</label>
               <textarea
                 id="message"
+                name="message"
+                required
                 rows={4}
                 className="w-full bg-transparent border-b border-[var(--color-surface-hover)] py-3 text-[var(--color-text)] focus:outline-none focus:border-[var(--color-accent)] transition-colors resize-none"
                 placeholder="Tell us about your vision..."

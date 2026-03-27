@@ -4,6 +4,17 @@ import { ArrowRight } from 'lucide-react';
 export default function Hero() {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop"
+          alt="Photographer holding camera"
+          className="w-full h-full object-cover opacity-40"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-bg)]/50 to-[var(--color-bg)]" />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center flex flex-col items-center">
         <motion.span
@@ -12,7 +23,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-[var(--color-accent)] uppercase tracking-[0.3em] text-sm mb-6 block"
         >
-          Your Vision, Our Lens
+          Connect. Book. Create -- Your Photography Hub.
         </motion.span>
         
         <motion.h1
@@ -54,23 +65,6 @@ export default function Hero() {
           </a>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-xs uppercase tracking-widest text-[var(--color-text-muted)] [writing-mode:vertical-rl]">Scroll</span>
-        <div className="w-[1px] h-12 bg-[var(--color-surface-hover)] relative overflow-hidden">
-          <motion.div
-            animate={{ y: [0, 48, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="absolute top-0 left-0 w-full h-1/2 bg-[var(--color-accent)]"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

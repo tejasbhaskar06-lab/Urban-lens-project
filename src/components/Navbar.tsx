@@ -29,8 +29,13 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2 group">
-          <Camera className="w-6 h-6 text-[var(--color-accent)] group-hover:rotate-12 transition-transform duration-300" />
+        <a href="#home" className="flex items-center gap-3 group">
+          <img 
+            src="https://images.unsplash.com/photo-1516961642265-531546e84af2?q=80&w=2000&auto=format&fit=crop" 
+            alt="Urban Lens Logo" 
+            className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+            referrerPolicy="no-referrer"
+          />
           <span className="font-serif text-xl font-semibold tracking-wider uppercase">Urban Lens</span>
         </a>
 

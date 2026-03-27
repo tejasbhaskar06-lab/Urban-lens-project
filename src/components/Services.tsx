@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Camera, Video } from 'lucide-react';
+import { Camera, Video, Aperture } from 'lucide-react';
 
 const services = [
   {
@@ -13,6 +13,12 @@ const services = [
     title: 'Event Coverage',
     description: 'Book professional freelance photographers for weddings, parties, corporate events, and more through our trusted third-party marketplace.',
     price: 'Starting at ₹45,000'
+  },
+  {
+    icon: <Aperture className="w-8 h-8" />,
+    title: 'Event Photo Studios',
+    description: 'Professional studio setups for your events. High-quality lighting, backdrops, and expert direction to capture perfect moments.',
+    price: 'Starting from ₹6,000'
   }
 ];
 
@@ -29,11 +35,11 @@ export default function Services() {
             Everything you need for <span className="italic text-[var(--color-text-muted)]">the perfect shot.</span>
           </h2>
           <p className="text-[var(--color-text-muted)] font-light">
-            We simplify your photography needs by offering both premium equipment rental and professional event photography services in one seamless platform.
+            We simplify your photography needs by offering both premium equipment on rental and professional event photography services in our seamless platform.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}

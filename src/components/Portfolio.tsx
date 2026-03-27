@@ -6,7 +6,7 @@ const categories = ['All', 'Weddings', 'Corporate', 'Parties', 'Gear'];
 
 const portfolioItems = [
   { id: 1, category: 'Weddings', image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop', title: 'The Vows' },
-  { id: 2, category: 'Gear', image: 'https://alphauniverseglobal.media.zestyio.com/Alpha-Universe-WIMB-Robert-Evans-Gear-Part1.jpeg', title: 'Pro Camera Kit' },
+  { id: 2, category: 'Gear', image: 'https://images.unsplash.com/photo-1507525475752-ed223abbfff4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhbWVyYSUyMGdlYXJzJTIwYW5kJTIwYWNjZXNvcmllc3xlbnwwfHwwfHx8MA%3D%3D', title: 'Pro Camera Kit' },
   { id: 3, category: 'Corporate', image: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop', title: 'Annual Gala' },
   { id: 4, category: 'Parties', image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop', title: 'Birthday Bash' },
   { id: 5, category: 'Weddings', image: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop', title: 'First Dance' },
@@ -14,6 +14,7 @@ const portfolioItems = [
   { id: 7, category: 'Corporate', image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop', title: 'Team Building' },
   { id: 8, category: 'Parties', image: 'https://media.istockphoto.com/id/501387734/photo/dancing-friends.jpg?s=612x612&w=0&k=20&c=SoTKXXMiJYnc4luzJz3gIdfup3MI8ZlROFNXRBruc10=', title: 'Celebration' },
   { id: 9, category: 'Gear', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=2000&auto=format&fit=crop', title: 'Premium Lenses' },
+  { id: 10, category: 'Gear', image: 'https://chatgpt.com/backend-api/estuary/content?id=file_00000000228471fa9c4c5c934f109c76&ts=492958&p=fs&cid=1&sig=624c42b6c8c792c61e2518dc8fdde873de3d342e35f7ed5f5ae810c139301f32&v=0', title: 'Studio Equipment' },
 ];
 
 export default function Portfolio() {
